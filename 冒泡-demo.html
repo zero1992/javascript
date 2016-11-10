@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>冒泡</title>
+</head>
+
+<body>
+	<div id='one'>
+		<div id='two'>
+			<div id='three'>
+				<div id='four'>
+          4
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type='text/javascript'>
+  var one=document.getElementById('one');
+  var two=document.getElementById('two');
+  var three=document.getElementById('three');
+  var four=document.getElementById('four');
+  one.addEventListener('click',function(){
+    alert('one');
+  },false);
+  two.addEventListener('click',function(){
+    alert('two');
+  },false);
+  three.addEventListener('click',function(){
+    alert('three');
+  },false);
+  four.addEventListener('click',function(){
+    alert('four');
+  },false);
+</script>
+<!--代码的执行顺序是：
+
+点击one元素，输出one；
+
+点击two元素，输出two one;
+
+点击three元素，输出 three two one；
+
+点击four元素，输出 four three two one；-->
+</body>
+
+</html>

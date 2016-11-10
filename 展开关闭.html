@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/public.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<script type='text/javascript'>
+	 function zhankai(index){
+		 var list_show=document.getElementById("list_show_"+index);
+		 var fonts=document.getElementById("fonts_"+index);
+		 if(list_show.style.display=="none"){
+			 fonts.innerHTML="关闭";
+			 list_show.style.display="block";
+
+		 }else if(list_show.style.display=="block"){
+			 fonts.innerHTML="查看";
+			 list_show.style.display="none";
+		 }
+	 }
+	</script>
+	<div class="box">
+		<ul>
+			<li>
+				<span><a onclick="zhankai(0)" id="fonts_0">查看</a></span>
+				<ul style="display:none;" id="list_show_0">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+
+			</li>
+			<li>
+				<span><a onclick="zhankai(1)" id="fonts_1">查看</a></span>
+				<ul style="display:none;" id="list_show_1">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+
+			</li>
+			<li>
+				<span><a onclick="zhankai(2)" id="fonts_2">查看</a></span>
+				<ul style="display:none;" id="list_show_2">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>
