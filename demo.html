@@ -1,21 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>仿黑客帝国代码</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<canvas id="canvas" style="background:#000"></canvas>
-	<script>
-        var canvas=document.getElementById("canvas");
-        var context=canvas.getContext("2d")
-        var w=window.innerWidth;//获取屏幕大小
-        var h=window.innerHeight;
-        canvas.width=w;
-        canvas.height=h;
-    </script>
+    <div class="box">
+        <div class="shopping">
+            <div class="shopping-list">
+                <ul id="cartLi">
+                    <li>
+                        <div class="checkbox"><input type="checkbox"></div><img src="http://image.meetto.cn/Uploads/goods/20151224/567b5f107ebd0.jpg@200h_200w_2e">
+                        <div class="title">物品1</div>
+                        <div class="price">158</div>
+                        <div class="cart-num">
+                            <span class="shop-l" data-price="158" onclick="minus(this)">-</span>
+                            <input type="text" value="1件">
+                            <span class="shop-r" data-price="158" onclick="plus(this)">+</span>
+                        </div>
+                        <div class="total-price">158</div>
+                        <div class="del"><span onclick="del(this)" class="glyphicon glyphicon-trash" id="del-btn"></span></div>
+                    </li>
+                    <li>
+                        <div class="checkbox"><input type="checkbox"></div><img src="http://image.meetto.cn/Uploads/goods/20151220/56763cab0f82d.jpg@200h_200w_2e">
+                        <div class="title">物品2</div>
+                        <div class="price">168</div>
+                        <div class="cart-num">
+                            <span class="shop-l" data-price="168" onclick="minus(this)">-</span>
+                            <input type="text" value="1件">
+                            <span class="shop-r" data-price="168" onclick="plus(this)">+</span>
+                        </div>
+                        <div class="total-price">168</div>
+                        <div class="del"><span onclick="del(this)" class="glyphicon glyphicon-trash" id="del-btn"></span></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="shopping-cart">
+                <div class="shopping-icon">
+                    <span class="glyphicon glyphicon-shopping-cart" style="font-size: 40px;margin-top:20px;"></span>
+                    <span id="cartText"></span>
+                </div>
+                <div class="tota-priceAll">总价：<span>0</span>元</div>
+            </div>
 
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script>
+        //从购物车移除该产品
+        function del(node){
+           node.parentNode.parentNode.remove(node);
+        }
+        //增加该产品购买量
+        function plus(e){
+
+        }
+
+        //减少该产品的购买量
+        function minus(e){
+          
+        }
+        //获取产品的价格
+        function getProductprice(e){
+        
+        }
+        //获取产品的购买数量
+        function getNumber(e){
+          
+        }
+        //设置购物车的购买数量
+        function setNumber(n,e){
+         
+        }
+        //设置该产品的购买总价
+        function setProductTotalPrice(price,number,e){
+            
+        }
+
+</script>
 </body>
-
 </html>
