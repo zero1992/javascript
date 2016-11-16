@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>实现图片缓慢缩放效果</title>
+    <style type="text/css">
+        #wrap {
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <img src="images/1.jpg" id="myimg" width=200px; height=113px;></br>
+        <input value="放大" id="big" type="button" onclick="bigbtn()">
+        <input value="缩小" id="small" type="button" onclick="smallbtn()">
+    </div>
+</body>
+<script type="text/javascript">
+ var myimg=document.getElementById("myimg");
+      //设置图片的极限值。
+      var bigwidth=myimg.width*2;
+      var bigheight=myimg.height*2;
+      var smallwidth=myimg.width*0.5;
+      var smallheight=myimg.height*0.5;
+ 
+      //点击放大方法
+      function bigbtn(){
+        var endwidth=myimg.width*1.3;//每次点击后图片的宽度
+        var endheight=myimg.height*1.3;//每次点击后图片的高度
+        //设置定时器
+        var bigTimer=setInterval(function(){
+            if(myimg.width<endwidth && myimg.height<endheight){
+                if(myimg.width<bigwidth && myimg.height<bigheight){
+                    myimg.width=myimg.width*1.05;
+                    myimg.height=myimg.height*1.05;
+                }else{
+                     alert("已经放大到最大值了");
+                     clearInterval(bigTimer);
+                }
+            }else{
+                  clearInterval(bigTimer);
+            }
+        },20);
+
+      }
+       //点击缩小方法
+       function smallbtn(){
+        var endwidth=myimg.width*0.7;//每次点击后图片的宽度
+        var endheight=myimg.height*0.7;//每次点击后图片的高度
+        //设置定时器
+        var smallTimer=setInterval(function(){
+            if(myimg.width>endwidth && myimg.height>endheight){
+                if(myimg.width>smallwidth && myimg.height>smallheight){
+                    myimg.width=myimg.width*0.95;
+                    myimg.height=myimg.height*0.95;
+                }else{
+                     alert("已经缩小到最小值了");
+                     clearInterval(smallTimer);
+                }
+            }else{
+                clearInterval(smallTimer);
+            }
+        },20);           
+          
+      }
+    </script>
+
+</html>

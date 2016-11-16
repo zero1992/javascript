@@ -205,3 +205,6 @@ a{ text-decoration:none;color:#666;}
         .tota-priceAll span {
             color: red;
         }
+
+
+.input_style{width:150px;height: 30px; display: block; margin: 0 auto; background: #eee; margin-top: 20px;}

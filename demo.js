@@ -92,14 +92,49 @@ for (var i = 0; i <= 1000; i++) {
 }
 
 //一个新入职（25岁），月工资为2000元的员工，每年涨工资20%，到退休时（60岁）的月工资是多少？ 直到退休拿了多少钱?
-var money=2000;
-var get_money=0;
-for(age=25;age<=60;age++){
-    for(month=1;month<=12;month++){
-        get_money=get_money+money;
+var money = 2000;
+var get_money = 0;
+for (age = 25; age <= 60; age++) {
+    for (month = 1; month <= 12; month++) {
+        get_money = get_money + money;
     }
-    money=money*1.2;
+    money = money * 1.2;
 }
-console.log("60岁薪资:"+money+"直到退休拿了:"+get_money);
+console.log("60岁薪资:" + money + "直到退休拿了:" + get_money);
 
-//
+
+//写一个js方法，实现6位随机数，要求输出的字符串中既要出现大写字母和小写字母数字
+//生成一位大写字母
+function randomUpper() {
+    string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    return string[Math.floor(Math.random() * 26)];
+}
+//生成一位小写字母
+function randomLower() {
+    string = "abcdefghijklmnopqrstuvwxyz";
+    return string[Math.floor(Math.random() * 26)];
+}
+//生成一位数字
+function randomNumber() {
+    return Math.floor(Math.random() * 10);
+}
+function randomCode(length){
+        var randomCode="";
+        for(i=0;i<length;i++){//每一次循环生成一位随机字符
+            switch(i%3){//取除以3的余数
+                case 0: 
+                    //整除则随机生成一位大写字符
+                    randomCode+=randomDaxie();
+                    break;
+                case 1:
+                    //余数为1则随机生成一位小写字符
+                    randomCode+=randomXiaoxie()
+                    break;
+                case 2:
+                    //余数为2则随机生成一位数字字符
+                    randomCode+=randomNumber();
+                    break;
+            }
+        }
+        return randomCode;//返回随机生成的结果字符串
+    }
