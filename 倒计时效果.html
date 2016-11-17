@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>倒计时效果</title>
+    <style type="text/css">#show{width:300px;height: 50px; margin:0 auto;text-align: center; line-height: 50px;background: #eee;}</style>
+    <script type="text/javascript"> 
+      window.onload=function(){
+          showTimer();       
+      }
+       function showTimer(){
+
+          var curtime=new Date();//当前时间
+          var endtime=new Date("2016,12,25");//到期时间
+          var lefttime=parseInt((endtime.getTime()-curtime.getTime())/1000);//转换成秒数
+          var d=parseInt(lefttime/(24*60*60));//天
+          var h=parseInt(lefttime/(60*60)%24);//时
+          var m=parseInt(lefttime/60%60);//分
+          var s=parseInt(lefttime%60);//秒
+          document.getElementById("show").innerHTML=d+"天"+h+"时"+m+"分"+s+"秒";
+          //到了结束时间
+          if(lefttime<=0){
+            document.getElementById("show").innerHTML="时间结束！";
+          }
+          setTimeout(showTimer,50)
+          }
+    </script>
+</head>
+
+<body>
+    <div id="show"></div>
+</body>
+
+</html>

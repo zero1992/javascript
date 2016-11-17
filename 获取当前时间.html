@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>获取当前时间</title>
+    <style type="text/css"></style>
+    <script type="text/javascript"> 
+      window.onload=function(){
+         showTimer();//方法调用
+      }
+      //9转换成09
+      function checkTime(n){
+          if(n<10){
+              n="0"+n;
+          }
+          return n;
+      }
+      //时间函数
+      function showTimer(){
+          var myDate=new Date();
+          var year=myDate.getFullYear();
+          var month=myDate.getMonth()+1;
+          var date=myDate.getDate();//获取 天
+          var d=myDate.getDay();//获取星期几 0-6
+          var h=myDate.getHours();//获取小时
+          var f=myDate.getMinutes();//获取分
+          var m=myDate.getSeconds();//获取秒
+          //转换
+          m=checkTime(m);
+          f=checkTime(f);
+
+         //定义星期
+         var weekday=new Array(7)
+          weekday[0]="星期日";
+          weekday[1]="星期一";
+          weekday[2]="星期二";
+          weekday[3]="星期三";
+          weekday[4]="星期四";
+          weekday[5]="星期五";
+          weekday[6]="星期六";
+          document.getElementById("show").innerHTML=year+"年"+month+"月"+date+"日"+weekday[d]+h+":"+f+":"+m;
+          setTimeout(showTimer,500);//每间隔500毫秒 执行一次函数 
+      }
+    </script>
+</head>
+
+<body>
+    <div id="show"></div>
+</body>
+
+</html>
